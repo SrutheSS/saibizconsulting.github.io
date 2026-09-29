@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saibiz Consulting | Business Consulting</title>
+
+    <meta name="description"
+          content="Saibiz Consulting helps startups and growing businesses with strategy, growth, market research and business planning.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #f8f7f4;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(248,247,244,0.95);
+            border-bottom: 1px solid #e5e2db;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #172033;
+        }
+
+        .logo span {
+            color: #b08a3e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #172033;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #b08a3e;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 25px 80px;
+            background:
+                radial-gradient(circle at 80% 20%, #e9dfc9 0%, transparent 35%),
+                #f8f7f4;
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            color: #b08a3e;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.05;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 680px;
+            color: #596273;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #172033;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b08a3e;
+        }
+
+        .btn-secondary {
+            border: 1px solid #172033;
+            color: #172033;
+        }
+
+        .btn-secondary:hover {
+            background: #172033;
+            color: white;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: #b08a3e;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 650px;
+            color: #626b7b;
+            margin-bottom: 50px;
+            font-size: 17px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #626b7b;
+            margin-bottom: 20px;
+        }
+
+        .about-box {
+            background: #172033;
+            color: white;
+            padding: 50px;
+        }
+
+        .about-box h3 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            color: #d8dce3;
+        }
+
+        /* SERVICES */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 30px;
+            border: 1px solid #e6e2db;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #b08a3e;
+        }
+
+        .service-number {
+            color: #b08a3e;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #687181;
+            font-size: 15px;
+        }
+
+        /* PROCESS */
+
+        .process {
+            background: #172033;
+            color: white;
+        }
+
+        .process .section-intro {
+            color: #cbd0d9;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .process-step {
+            border-top: 1px solid #5d6573;
+            padding-top: 25px;
+        }
+
+        .process-step span {
+            color: #b08a3e;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .process-step h3 {
+            margin: 15px 0 10px;
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .process-step p {
+            color: #cbd0d9;
+            font-size: 14px;
+        }
+
+        /* WHY US */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .why-item {
+            padding: 30px;
+            background: white;
+            border-left: 3px solid #b08a3e;
+        }
+
+        .why-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .why-item p {
+            color: #687181;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #e9dfc9;
+        }
+
+        .contact-container {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-container p {
+            color: #596273;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin: 30px 0;
+        }
+
+        .contact-details a {
+            display: block;
+            color: #172033;
+            text-decoration: none;
+            margin: 8px;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #101827;
+            color: #bfc5cf;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .about-grid,
+            .services-grid,
+            .process-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 38px;
+            }
+
+            .about-box {
+                padding: 35px;
+            }
+
+            section {
+                padding: 75px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">
+            Sai<span>biz</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Business Consulting
+            </div>
+
+            <h1>
+                Build smarter.<br>
+                Grow stronger.
+            </h1>
+
+            <p>
+                Saibiz Consulting helps startups and growing businesses
+                turn ideas, challenges and opportunities into clear
+                strategies and sustainable growth.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Book a Consultation
+                </a>
+
+                <a href="#services" class="btn btn-secondary">
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    About Saibiz
+                </div>
+
+                <h2>
+                    Turning business challenges into opportunities.
+                </h2>
+
+                <p>
+                    Saibiz Consulting is a business consulting firm
+                    focused on helping startups, entrepreneurs and
+                    growing businesses make better strategic decisions.
+                </p>
+
+                <p>
+                    We combine business thinking, market insights and
+                    practical execution to help businesses move forward
+                    with greater clarity and confidence.
+                </p>
+
+            </div>
+
+            <div class="about-box">
+
+                <h3>
+                    Strategy that leads to action.
+                </h3>
+
+                <p>
+                    Our approach is simple: understand the business,
+                    identify the opportunity, create a practical strategy
+                    and help turn that strategy into measurable results.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-label">
+            What We Do
+        </div>
+
+        <h2>
+            Consulting built around your business.
+        </h2>
+
+        <p class="section-intro">
+            From validating a new business idea to improving an
+            established business, Saibiz provides practical consulting
+            support across key areas of growth.
+        </p>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>Business Strategy</h3>
+                <p>
+                    Develop clear business strategies aligned with
+                    your goals, market and competitive landscape.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Startup Consulting</h3>
+                <p>
+                    From business ideas to launch planning, build a
+                    stronger foundation for your startup.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>Market Research</h3>
+                <p>
+                    Understand customers, competitors and market
+                    opportunities before making critical decisions.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3>Growth Strategy</h3>
+                <p>
+                    Identify new opportunities to increase revenue,
+                    customers and long-term business value.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>Business Planning</h3>
+                <p>
+                    Build practical business plans covering objectives,
+                    markets, operations and financial considerations.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">06</div>
+                <h3>Operations Consulting</h3>
+                <p>
+                    Improve processes, efficiency and decision-making
+                    to create a more scalable business.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process" id="process">
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Approach
+        </div>
+
+        <h2>
+            From insight to execution.
+        </h2>
+
+        <p class="section-intro">
+            A straightforward consulting process designed to turn
+            business challenges into practical action.
+        </p>
+
+
+        <div class="process-grid">
+
+            <div class="process-step">
+                <span>01</span>
+                <h3>Discover</h3>
+                <p>
+                    Understand your business, goals and challenges.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>02</span>
+                <h3>Diagnose</h3>
+                <p>
+                    Identify opportunities, risks and areas for improvement.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>03</span>
+                <h3>Strategize</h3>
+                <p>
+                    Develop a focused strategy based on your objectives.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <span>04</span>
+                <h3>Execute</h3>
+                <p>
+                    Translate strategy into practical business actions.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY SAIBIZ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            Why Saibiz
+        </div>
+
+        <h2>
+            Practical thinking. Clear direction.
+        </h2>
+
+        <p class="section-intro">
+            We focus on creating solutions that are practical,
+            understandable and relevant to the business.
+        </p>
+
+
+        <div class="why-grid">
+
+            <div class="why-item">
+                <h3>Business-focused</h3>
+                <p>
+                    Recommendations are designed around real business
+                    objectives rather than generic frameworks.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <h3>Data-informed</h3>
+                <p>
+                    Use market information and business data to support
+                    better decisions.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <h3>Customized</h3>
+                <p>
+                    Every business has different challenges, customers
+                    and opportunities.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <h3>Action-oriented</h3>
+                <p>
+                    The goal is not just a strategy document but a clear
+                    path toward implementation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-container">
+
+        <div class="section-label">
+            Let's Talk
+        </div>
+
+        <h2>
+            Have a business idea or challenge?
+        </h2>
+
+        <p>
+            Tell us about your business and let's explore how
+            Saibiz Consulting can help.
+        </p>
+
+
+        <div class="contact-details">
+
+            <!-- CHANGE THESE DETAILS -->
+
+            <a href="mailto:hello@saibizconsulting.com">
+                hello@saibizconsulting.com
+            </a>
+
+            <a href="tel:+919999999999">
+                +91 99999 99999
+            </a>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a href="mailto:hello@saibizconsulting.com"
+               class="btn btn-primary">
+                Contact Saibiz
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>Saibiz Consulting</strong>.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
